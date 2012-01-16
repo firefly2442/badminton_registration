@@ -284,6 +284,7 @@ $subject = "ISU Badminton Tournament Registration Confirmation";
 $mailto = $email_address;
 
 $email_body = "Thank you for registering for the ISU Badminton Tournament.\n";
+$email_body .= "\nMarch 24-25, 2012\n\n";
 $email_body .= "Name: " . $first_name . " " . $last_name . "\n";
 $email_body .= "ISU Club Member: " . $club_member . "\n";
 $email_body .= "Gender: " . $gender . "\n";
@@ -297,8 +298,7 @@ $email_body .= "Women's Singles: " . $woman_single . "\n";
 $email_body .= "Women's Doubles: " . $woman_double . " (" . $woman_double_name . ")\n";
 $email_body .= "Mixed Doubles: " . $mixed_double . " (" . $mixed_double_name . ")\n";
 
-$email_body .= "If this information is not correct or you need to change anything that
-				has already been submitted, please email Patrick Carlson <carlsonp@iastate.edu>.\n";
+$email_body .= "If this information is not correct or you need to change anything that has already been submitted, please email Patrick Carlson carlsonp@iastate.edu.\n";
 $email_body .= "Please tell your friends to register!\n";
 $email_body .= "View who else has registered here:\n";
 $email_body .= "http://badminton.rivetcode.com\n";
@@ -307,7 +307,8 @@ $email_body .= "http://badminton.rivetcode.com\n";
 $email_body = strip_tags($email_body);
 
 if(mail($mailto, $subject, $email_body, $headers))
-	echo "<p>A confirmation email has been sent to: " . $email_address . "</p>";
+	echo "<p>A confirmation email has been sent to: " . $email_address . ". If you don't see
+		an email, check your spam folder.</p>";
 else
 	echo "<p>There was a problem sending your confirmation email.</p>";
 
