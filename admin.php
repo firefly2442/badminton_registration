@@ -16,18 +16,17 @@ if (!$_SESSION['admin_logged_in'])
 $db = mysql_connect($db_host, $db_user, $db_pass) or die("Cannot connect to database.");
 mysql_select_db($db_name) or die("Error selecting database.");
 
-if (isset($_POST['highest_id']))
+//if information was sent, process it
+if (isset($_POST['id']) && isset($_POST['checked']))
 {
-	//update database
-	for ($i = 0; $i < $_POST['highest_id']; $i++)
-	{
-		if ($_POST[$i] == "on")
-			$query = "UPDATE tournament SET paid=true WHERE id='".$i."'";
-		else
-			$query = "UPDATE tournament SET paid=false WHERE id='".$i."'";
-			
-		mysql_query($query) or die("Can't run SQL query.");
+	if ($_POST['checked'] == "true") {
+		$query = "UPDATE tournament SET paid=true WHERE id='".mysql_real_escape_string($_POST['id'])."'";
+	} else {
+		$query = "UPDATE tournament SET paid=false WHERE id='".mysql_real_escape_string($_POST['id'])."'";
 	}
+
+	mysql_query($query) or die("Can't run SQL query.");
+	exit();
 }
 
 ?>
@@ -36,6 +35,7 @@ if (isset($_POST['highest_id']))
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Administration Page</title>
@@ -43,12 +43,44 @@ if (isset($_POST['highest_id']))
 </head>
 <body>
 
+<script>
+//http://api.jquery.com/change/
+$(document).ready(function(){
+	$.ajaxSetup({async:false}); //disable async so that post blocks until it's finished
+	$("#fadeout_text").hide(); //hide by default, only show when there's an update
+    $(":checkbox").change(function(){
+        if($(this).attr("checked"))
+        {
+            //call the function to be fired
+            //when your box changes from
+            //unchecked to checked
+			//http://api.jquery.com/jQuery.post/
+			$.post("admin.php", { id: $(this).attr("name"), checked: "true" } );
+			$("#fadeout_text").show(); //make it visible
+			//http://api.jquery.com/fadeOut/
+			$("#fadeout_text").fadeOut(2500);
+        }
+        else
+        {
+            //call the function to be fired
+            //when your box changes from
+            //checked to unchecked
+			//http://api.jquery.com/jQuery.post/
+			$.post("admin.php", { id: $(this).attr("name"), checked: "false" } );
+			$("#fadeout_text").show(); //make it visible
+			//http://api.jquery.com/fadeOut/
+			$("#fadeout_text").fadeOut(2500);
+        }
+    });
+});
+</script>
+
 <h1>Administration Page</h1>
 <br>
 <b><a href="./authenticate.php?status=logout">Logout</a></b>
 <hr>
 
-<form action="admin.php" method="POST">
+<form>
 
 <table>
 <tr>
@@ -61,7 +93,6 @@ if (isset($_POST['highest_id']))
 
 $result = mysql_query("SELECT * FROM tournament ORDER BY first_name") or die("Can't run SQL query.");
 
-$highest_id = 0;
 $row_count = 0;
 while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 {
@@ -114,33 +145,32 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 		echo "</td>";
 		echo "<td class='center'>";
 
-			echo "<input type='checkbox' name='";
-			echo $row['id'];
+			echo "<input type='checkbox' name='" . $row['id'] . "'";
 			
 			if ($row['paid'] == true)
-				echo "' checked>";
+				echo " checked>";
 			else
-				echo "'>";
+				echo ">";
 		
 		echo "</td>\n";
 		echo "<td class='center'>".$row['date']."</td>";
 		
 	echo "</tr>\n";
 	$row_count++;
-	if ($highest_id < $row['id'])
-		$highest_id = $row['id'];
 }
 
 ?>
 </table>
-<?php
-echo "<input type='hidden' name='highest_id' value='".$highest_id."'>\n";
-?>
 <br><br>
 <center>
-<input type="submit" name="submit" value="Update">
 </center>
 </form>
+
+<center>
+<big>
+<p id="fadeout_text">Updating database...</p>
+</big>
+</center>
 
 <br>
 </body>
