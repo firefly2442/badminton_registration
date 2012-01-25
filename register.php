@@ -145,8 +145,8 @@ if ($error != "")
 <br>
 <br>
 <big><font color=red><b>*</b></font>Check the events you are registering in:</big>
-<br>For Non Member of ISU Badminton club: $15 for 1st event, $5 for each additional event.
-<br>For Member of ISU Badminton club: $10 for 1st event, $5 for each additional event.
+<br>For Non Member of ISU Badminton club: $25 for 1st event, $5 for each additional event.
+<br>For Member of ISU Badminton club: $15 for 1st event, $5 for each additional event.
 <br>
 <input type="checkbox" name="men_single"> Men's Singles
 <br>

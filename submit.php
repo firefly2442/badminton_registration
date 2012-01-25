@@ -185,9 +185,9 @@ else
 <?php
 
 if ($club_member == "on")
-	$money = 10;
-else
 	$money = 15;
+else
+	$money = 25;
 $events--;
 $money = $money + ($events * 5);
 echo $money;
