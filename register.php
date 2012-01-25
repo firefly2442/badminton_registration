@@ -138,10 +138,10 @@ if ($error != "")
 <br>
 <br>
 <big><font color=red><b>*</b></font>Rate your level of experience (A is best):</big>
-<input type="radio" name="exp_level" value="A"> A
-<input type="radio" name="exp_level" value="B"> B
-<input type="radio" name="exp_level" value="C"> C
-<input type="radio" name="exp_level" value="D"> D
+<input type="radio" name="exp_level" value="A"> A (semiprofessional/professional)
+<input type="radio" name="exp_level" value="B"> B (advanced)
+<input type="radio" name="exp_level" value="C"> C (intermediate)
+<input type="radio" name="exp_level" value="D"> D (beginner)
 <br>
 <br>
 <big><font color=red><b>*</b></font>Check the events you are registering in:</big>
