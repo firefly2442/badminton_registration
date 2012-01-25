@@ -165,19 +165,19 @@ if (mysql_num_rows($result) > 0)
 //show special message for those under 18
 if ($age < 18)
 {
-	echo "<p><b><u><big><font color='red'>Since you are under 18 years of age, please also submit a hardcopy of the <a href='http://www.stuorg.iastate.edu/badminton/2010ISUBadmintonOpen.pdf'>registration
+	echo "<p><b><u><big><font color='red'>Since you are under 18 years of age, please also submit a hardcopy of the <a href='http://www.stuorg.iastate.edu/badminton/forms/2012_ISU_badminton_open_registration_form.pdf'>registration
 			form</a> when you send the check in and make sure to get your parent/guardian signature.</font></big></u></b></p><br>";
 }
 if ($club_member == "on")
 {
 	echo "<p><b>Since you are an ISU Badminton Club member, you can either mail your check to the address below or
 			you can give the check or cash to Xuhui Feng (Treasurer of the Badminton Club) during practice.  <u>Make sure this is turned in by
-			March 20th, 2010.</u>  In addition, if you haven't submitted the <a href='http://www.recservices.iastate.edu/clubs/waivers/docs/Badminton.pdf'>waiver
+			March 16th, 2012.</u>  In addition, if you haven't submitted the <a href='http://www.recservices.iastate.edu/clubs/waivers/docs/Badminton.pdf'>waiver
 			and medical form</a> please also include this when you pay.</b></p><br>";
 }
 else
 {
-	echo "<p><b>Since you are not an ISU Badminton Club member, please also fill out the <a href='http://www.recservices.iastate.edu/clubs/waivers/docs/Badminton.pdf'>waiver
+	echo "<p><b>Since you are not an ISU Badminton Club member, please also fill out the <a href='http://www.stuorg.iastate.edu/badminton/forms/2012_ISU_badminton_open_registration_form.pdf'>waiver
 		and medical form</a> when you send in your check.</b></p><br>";
 }
 ?>
@@ -199,7 +199,7 @@ echo $money;
 <p>2229 Lincoln Way</p>
 <p>Ames, Iowa 50011</p>
 <br>
-<p><big><u><b>Mail must be postmarked by March 20th, 2010</b></u></big></p>
+<p><big><u><b>Mail must be received by March 16th, 2012</b></u></big></p>
 <p>Please note, we <font color="red"><big><u>cannot</u></big></font> finalize your registration in the tournament until we receive your check and payment <font color="red"><big><u>cannot</u></big></font> be done at the door.</p>
 <p>To check on the status of your payment or to see who else has registered, please visit <a href="./view_registered.php">this page.</a></p>
 
