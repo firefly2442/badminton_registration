@@ -11,7 +11,7 @@ mysql_select_db($db_name) or die("Error selecting database.");
 <title>Registered for Tournament</title>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
 

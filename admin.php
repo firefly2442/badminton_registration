@@ -35,9 +35,9 @@ if (isset($_POST['id']) && isset($_POST['checked']))
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Administration Page</title>
 
 </head>

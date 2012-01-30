@@ -59,3 +59,8 @@ table {
 .right {
 	text-align: right;
 }
+
+#error {
+	color: red;
+	font-size: 150%;
+}
