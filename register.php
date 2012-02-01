@@ -7,6 +7,10 @@
 </head>
 <body>
 
+<div id="breadcrumb">
+<a href="index.php">Home</a> | <a href="view_registered.php">View Registered Players</a>
+</div>
+
 <?php
 
 require_once("config.inc.php");

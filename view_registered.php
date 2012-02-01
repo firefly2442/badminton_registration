@@ -15,6 +15,10 @@ mysql_select_db($db_name) or die("Error selecting database.");
 </head>
 <body>
 
+<div id="breadcrumb">
+<a href="index.php">Home</a> | <a href="register.php">Register for Tournament</a>
+</div>
+
 <h1>Registered for Tournament</h1>
 <center><big>Not registered?  <a href="register.php">Click here.</a></big></center>
 

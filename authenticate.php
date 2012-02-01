@@ -19,6 +19,11 @@ $status = $_GET['status'];
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
+
+<div id="breadcrumb">
+<a href="index.php">Home</a> | <a href="view_registered.php">View Registered Players</a>
+</div>
+
 <center>
 <h1>Admin Login</h1>
 <h3>Please login with the required password.</h3>

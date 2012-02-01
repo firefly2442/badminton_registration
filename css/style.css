@@ -15,7 +15,7 @@ tr.row1 {
 }
 body {
 	font: 14px tahoma, verdana, arial, sans-serif;
-	background-color: #99B2CC;
+	background-color: #7698BA;
 	color: #333333;
 }
 h1 {
@@ -62,5 +62,9 @@ table {
 
 #error {
 	color: red;
+	font-size: 150%;
+}
+
+#breadcrumb {
 	font-size: 150%;
 }

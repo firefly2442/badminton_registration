@@ -43,6 +43,10 @@ if (isset($_POST['id']) && isset($_POST['checked']))
 </head>
 <body>
 
+<div id="breadcrumb">
+<a href="index.php">Home</a> | <a href="view_registered.php">View Registered Players</a>
+</div>
+
 <script>
 //http://api.jquery.com/change/
 $(document).ready(function(){
