@@ -214,10 +214,10 @@ if (isset($_POST['submit']))
 <div id="error"><div id="experience">You didn't specify an experience level.</div></div>
 <script>$("#experience").hide();</script>
 <big><font color=red><b>*</b></font>Rate your level of experience (A is best):</big>
-<input type="radio" name="exp_level" value="A" <?php if (isset($exp_level) && $exp_level == "A") { echo " checked"; }?>> A (semiprofessional/professional)
-<input type="radio" name="exp_level" value="B" <?php if (isset($exp_level) && $exp_level == "B") { echo " checked"; }?>> B (advanced)
-<input type="radio" name="exp_level" value="C" <?php if (isset($exp_level) && $exp_level == "C") { echo " checked"; }?>> C (intermediate)
-<input type="radio" name="exp_level" value="D" <?php if (isset($exp_level) && $exp_level == "D") { echo " checked"; }?>> D (beginner)
+<input type="radio" name="exp_level" value="A" <?php if (isset($exp_level) && $exp_level == "A") { echo " checked"; }?>> A (Highly Competitive)
+<input type="radio" name="exp_level" value="B" <?php if (isset($exp_level) && $exp_level == "B") { echo " checked"; }?>> B (Advanced)
+<input type="radio" name="exp_level" value="C" <?php if (isset($exp_level) && $exp_level == "C") { echo " checked"; }?>> C (Competitive)
+<input type="radio" name="exp_level" value="D" <?php if (isset($exp_level) && $exp_level == "D") { echo " checked"; }?>> D (Intermediate or Beginner)
 <br>
 <br>
 
