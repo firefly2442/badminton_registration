@@ -1,5 +1,5 @@
 <html>
-<title>ISU Badminton Open Registration</title>
+<title>Tournament Registration</title>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
@@ -134,7 +134,7 @@ if (isset($_POST['submit']))
 
 
 <center>
-<h1>ISU Badminton Open</h1>
+<h1>Iowa Badminton Open 2012 (Sponsored by <a href="http://www.yonex.com" target="_blank">Yonex</a>)</h1>
 <h1>Saturday March 25th & Sunday March 26th, 2012</h1>
 <h2>Please complete the following form to register for the tournament.</h2>
 </center>
@@ -366,7 +366,7 @@ if (isset($_POST['submit']))
 		//show special message for those under 18
 		if ($age < 18)
 		{
-			echo "<p><b><u><big><font color='red'>Since you are under 18 years of age, please also submit a hardcopy of the <a href='http://www.stuorg.iastate.edu/badminton/forms/2012_ISU_badminton_open_registration_form.pdf'>registration
+			echo "<p><b><u><big><font color='red'>Since you are under 18 years of age, please also submit a hardcopy of the <a href='http://www.stuorg.iastate.edu/badminton/forms/Iowa_Badminton_Open_2012.pdf'>registration
 					form</a> when you send the check in and make sure to get your parent/guardian signature.</font></big></u></b></p><br>";
 		}
 		if ($club_member == "on")
@@ -378,7 +378,7 @@ if (isset($_POST['submit']))
 		}
 		else
 		{
-			echo "<p><b>Since you are not an ISU Badminton Club member, please also fill out the <a href='http://www.stuorg.iastate.edu/badminton/forms/2012_ISU_badminton_open_registration_form.pdf'>waiver
+			echo "<p><b>Since you are not an ISU Badminton Club member, please also fill out the <a href='http://www.stuorg.iastate.edu/badminton/forms/Iowa_Badminton_Open_2012.pdf'>waiver
 				and medical form</a> when you send in your check.</b></p><br>";
 		}
 
@@ -481,10 +481,10 @@ if (isset($_POST['submit']))
 
 		//Send email via isubadminton@rivetcode.com
 		$headers = 'From: isubadminton@rivetcode.com' . "\r\n";
-		$subject = "ISU Badminton Tournament Registration Confirmation";
+		$subject = "Iowa Badminton Open 2012 Registration Confirmation";
 		$mailto = $email_address;
 
-		$email_body = "Thank you for registering for the ISU Badminton Tournament.\n";
+		$email_body = "Thank you for registering for the Iowa Badminton Open 2012.\n";
 		$email_body .= "\nMarch 24-25, 2012\n\n";
 		$email_body .= "Name: " . $first_name . " " . $last_name . "\n";
 		$email_body .= "ISU Club Member: " . $club_member . "\n";
