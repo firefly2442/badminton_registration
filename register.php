@@ -1,3 +1,16 @@
+<?php
+require_once("config.inc.php");
+
+//check date, if over deadline, don't allow registration
+if (strtotime('now') > strtotime($deadline))
+{
+	echo "Online registration is now closed, the deadline was: " . $deadline;
+	exit();
+}
+
+?>
+
+
 <html>
 <title>Tournament Registration</title>
 <head>
@@ -12,8 +25,6 @@
 </div>
 
 <?php
-
-require_once("config.inc.php");
 
 function filter($data)
 {
