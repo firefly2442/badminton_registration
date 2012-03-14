@@ -146,7 +146,7 @@ if (isset($_POST['submit']))
 
 <center>
 <h1>Iowa Badminton Open 2012 (Sponsored by <a href="http://www.yonex.com" target="_blank">Yonex</a>)</h1>
-<h1>Saturday March 25th & Sunday March 26th, 2012</h1>
+<h1>Saturday March 24th & Sunday March 25th, 2012</h1>
 <h2>Please complete the following form to register for the tournament.</h2>
 </center>
 
