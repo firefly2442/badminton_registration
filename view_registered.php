@@ -31,6 +31,7 @@ mysql_select_db($db_name) or die("Error selecting database.");
 <td><a href="#woman_single">Woman's Singles</a></td>
 <td><a href="#woman_double">Woman's Doubles</a></td>
 <td><a href="#mixed_double">Mixed Doubles</a></td>
+<td><a href="#payments">Registration Payments</a></td>
 </tr>
 </table>
 </center>
@@ -43,7 +44,7 @@ mysql_select_db($db_name) or die("Error selecting database.");
 <h2>Men's Singles:</h2>
 <table>
 <tr>
-<th width="80%">Name</th><th width="80%">Payment Received</th>
+<th width="100%">Name</th>
 </tr>
 <?php
 $result = mysql_query("SELECT * FROM tournament WHERE men_single = true ORDER BY first_name") or die("Can't run SQL query.");
@@ -56,9 +57,6 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 	echo $row_color;
 	echo "'>\n";
 		echo "<td class='center'>".$row['first_name']." ".$row['last_name']."</td>";
-		echo "<td class='center'>";
-			echo (($row['paid'] == true) ? "Yes" : "No");		
-		echo "</td>\n";
 	echo "</tr>\n";
 	$row_count++;
 }
@@ -70,7 +68,7 @@ echo "</table><hr><br>";
 <h2>Men's Doubles:</h2>
 <table>
 <tr>
-<th width="40%">Name</th><th width="40%">Partner</th><th width="20%">Payment Received</th>
+<th width="50%">Name</th><th width="50%">Partner</th>
 </tr>
 <?php
 $result = mysql_query("SELECT * FROM tournament WHERE men_double = true ORDER BY first_name") or die("Can't run SQL query.");
@@ -84,9 +82,6 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 	echo "'>\n";
 		echo "<td class='center'>".$row['first_name']." ".$row['last_name']."</td>";
 		echo "<td class='center'>".$row['men_double_name']."</td>";
-		echo "<td class='center'>";
-			echo (($row['paid'] == true) ? "Yes" : "No");		
-		echo "</td>\n";
 	echo "</tr>\n";
 	$row_count++;
 }
@@ -98,7 +93,7 @@ echo "</table><hr><br>";
 <h2>Woman's Singles:</h2>
 <table>
 <tr>
-<th width="80%">Name</th><th width="20%">Payment Received</th>
+<th width="100%">Name</th>
 </tr>
 <?php
 $result = mysql_query("SELECT * FROM tournament WHERE woman_single = true ORDER BY first_name") or die("Can't run SQL query.");
@@ -111,9 +106,6 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 	echo $row_color;
 	echo "'>\n";
 		echo "<td class='center'>".$row['first_name']." ".$row['last_name']."</td>";
-		echo "<td class='center'>";
-			echo (($row['paid'] == true) ? "Yes" : "No");		
-		echo "</td>\n";
 	echo "</tr>\n";
 	$row_count++;
 }
@@ -125,7 +117,7 @@ echo "</table><hr><br>";
 <h2>Woman's Doubles:</h2>
 <table>
 <tr>
-<th width="40%">Name</th><th width="40%">Partner</th><th width="20%">Payment Received</th>
+<th width="50%">Name</th><th width="50%">Partner</th>
 </tr>
 <?php
 $result = mysql_query("SELECT * FROM tournament WHERE woman_double = true ORDER BY first_name") or die("Can't run SQL query.");
@@ -139,9 +131,6 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 	echo "'>\n";
 		echo "<td class='center'>".$row['first_name']." ".$row['last_name']."</td>";
 		echo "<td class='center'>".$row['woman_double_name']."</td>";
-		echo "<td class='center'>";
-			echo (($row['paid'] == true) ? "Yes" : "No");		
-		echo "</td>\n";
 	echo "</tr>\n";
 	$row_count++;
 }
@@ -152,7 +141,7 @@ echo "</table><hr><br>";
 <h2>Mixed Doubles:</h2>
 <table>
 <tr>
-<th width="40%">Name</th><th width="40%">Partner</th><th width="20%">Payment Received</th>
+<th width="50%">Name</th><th width="50%">Partner</th>
 </tr>
 <?php
 $result = mysql_query("SELECT * FROM tournament WHERE mixed_double = true ORDER BY first_name") or die("Can't run SQL query.");
@@ -166,8 +155,32 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 	echo "'>\n";
 		echo "<td class='center'>".$row['first_name']." ".$row['last_name']."</td>";
 		echo "<td class='center'>".$row['mixed_double_name']."</td>";
+	echo "</tr>\n";
+	$row_count++;
+}
+echo "</table><hr><br>";
+?>
+
+
+<a name="payments"></a>
+<h2>Registration Payments:</h2>
+<table>
+<tr>
+<th width="80%">Name</th><th width="20%">Registration Payment Received</th>
+</tr>
+<?php
+$result = mysql_query("SELECT * FROM tournament ORDER BY first_name") or die("Can't run SQL query.");
+
+$row_count = 0;
+while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
+{
+	$row_color = ($row_count % 2);
+	echo "<tr class='row";
+	echo $row_color;
+	echo "'>\n";
+		echo "<td class='center'>".$row['first_name']." ".$row['last_name']."</td>";
 		echo "<td class='center'>";
-			echo (($row['paid'] == true) ? "Yes" : "No");		
+			echo (($row['paid'] == true) ? "Yes" : "<font color='red'>No</font>");		
 		echo "</td>\n";
 	echo "</tr>\n";
 	$row_count++;

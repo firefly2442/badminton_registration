@@ -16,6 +16,7 @@
 <ul>
 	<li><a href="./register.php">Register for Tournament</a></li>
 	<li><a href="./view_registered.php">See who is currently registered for the tournament</a></li>
+	<li><a href="./view_registered.php#payments">Check your registration payment status</a></li>
 	<li><a href="http://www.stuorg.iastate.edu/badminton/">ISU Badminton Website</a></li>
 	<li><a href="./admin.php">Administration</a></li>
 </ul>
