@@ -510,6 +510,7 @@ if (isset($_POST['submit']))
 		$email_body .= "Women's Doubles: " . $woman_double . " (" . $woman_double_name . ")\n";
 		$email_body .= "Mixed Doubles: " . $mixed_double . " (" . $mixed_double_name . ")\n";
 
+		$email_body .= "Please do not reply to this email as we will not be checking this address.\n";
 		$email_body .= "If this information is not correct or you need to change anything that has already been submitted, please contact the badminton club President.\n";
 		$email_body .= "http://www.stuorg.iastate.edu/badminton/contact.php\n";
 		$email_body .= "Please tell your friends to register!\n";
