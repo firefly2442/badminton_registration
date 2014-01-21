@@ -145,8 +145,9 @@ if (isset($_POST['submit']))
 
 
 <center>
-<h1>Iowa Badminton Open 2012 (Sponsored by <a href="http://www.yonex.com" target="_blank">Yonex</a>)</h1>
-<h1>Saturday March 24th & Sunday March 25th, 2012</h1>
+<?php
+echo $tournament_details;
+?>
 <h2>Please complete the following form to register for the tournament.</h2>
 </center>
 
@@ -154,7 +155,7 @@ if (isset($_POST['submit']))
 <div id="entire_form">
 <br>
 <p>There are no requirements for membership in any badminton club or association (USAB, etc.).</p>
-<p>Questions or problems? Contact Club President: Muneaki Watanabe, <a href="mailto:mune1122@iastate.edu">mune1122@iastate.edu</a></p>
+<p>Questions or problems? <a href="http://www.stuorg.iastate.edu/badminton/contact.php">Contact an ISU Badminton Club Officer</a></p>
 <br>
 <font color=red><b>*</b></font> = required information
 <br>
@@ -383,8 +384,8 @@ if (isset($_POST['submit']))
 		if ($club_member == "on")
 		{
 			echo "<p><b>Since you are an ISU Badminton Club member, you can either mail your check to the address below or
-					you can give the check or cash to Xuhui Feng (Treasurer of the Badminton Club) during practice.  <u>Make sure this is turned in by
-					March 16th, 2012.</u>  In addition, if you haven't submitted the <a href='http://www.recservices.iastate.edu/clubs/waivers/docs/Badminton.pdf'>waiver
+					you can give the check or cash to Bin Dong (Treasurer of the Badminton Club) during practice.  <u>Make sure this is turned in by
+					March ?, 2014.</u>  In addition, if you haven't submitted the <a href='http://www.recservices.iastate.edu/clubs/waivers/docs/Badminton.pdf'>waiver
 					and medical form</a> please also include this when you pay.</b></p><br>";
 		}
 		else
@@ -413,7 +414,7 @@ if (isset($_POST['submit']))
 		<p>2229 Lincoln Way</p>
 		<p>Ames, Iowa 50011</p>
 		<br>
-		<p><big><u><b>Mail must be received by March 16th, 2012</b></u></big></p>
+		<p><big><u><b>Mail must be received by March ?, 2014</b></u></big></p>
 		<p>Please note, we <font color="red"><big><u>cannot</u></big></font> finalize your registration in the tournament until we receive your check and payment <font color="red"><big><u>cannot</u></big></font> be done at the door.</p>
 		<p>To check on the status of your payment or to see who else has registered, please visit <a href="./view_registered.php">this page.</a></p>
 
@@ -489,14 +490,13 @@ if (isset($_POST['submit']))
 		//echo $query;
 		mysql_query($query) or die("Can't run SQL query.");
 
-
-		//Send email via isubadminton@rivetcode.com
-		$headers = 'From: isubadminton@rivetcode.com' . "\r\n";
-		$subject = "Iowa Badminton Open 2012 Registration Confirmation";
+		//Set this email address via the config.inc.php file
+		$headers = 'From: ' . $email_sender . "\r\n";
+		$subject = $email_title;
 		$mailto = $email_address;
 
-		$email_body = "Thank you for registering for the Iowa Badminton Open 2012.\n";
-		$email_body .= "\nMarch 24-25, 2012\n\n";
+		$email_body = "Thank you for registering for the Iowa Badminton Open 2014.\n";
+		$email_body .= "\nMarch ?, 2014\n\n";
 		$email_body .= "Name: " . $first_name . " " . $last_name . "\n";
 		$email_body .= "ISU Club Member: " . $club_member . "\n";
 		$email_body .= "Gender: " . $gender . "\n";
@@ -510,9 +510,10 @@ if (isset($_POST['submit']))
 		$email_body .= "Women's Doubles: " . $woman_double . " (" . $woman_double_name . ")\n";
 		$email_body .= "Mixed Doubles: " . $mixed_double . " (" . $mixed_double_name . ")\n";
 
-		$email_body .= "If this information is not correct or you need to change anything that has already been submitted, please email Patrick Carlson carlsonp@iastate.edu.\n";
+		$email_body .= "If this information is not correct or you need to change anything that has already been submitted, please contact the badminton club President.\n";
+		$email_body .= "http://www.stuorg.iastate.edu/badminton/contact.php\n";
 		$email_body .= "Please tell your friends to register!\n";
-		$email_body .= "View who else has registered here:\n";
+		$email_body .= "View who else has registered as well as check to see if we've received your payment here:\n";
 		$email_body .= "http://badminton.rivetcode.com\n";
 		$email_body .= "\nMailing Address:\n";
 		$email_body .= "ISU Badminton Club c/o: Tournament\n";
