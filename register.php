@@ -414,7 +414,7 @@ if (isset($_POST['submit']))
 		<p>2229 Lincoln Way</p>
 		<p>Ames, Iowa 50011</p>
 		<br>
-		<p><big><u><b>Mail must be received by March ?, 2014</b></u></big></p>
+		<p><big><u><b>Mail must be received by March 21, 2014</b></u></big></p>
 		<p>Please note, we <font color="red"><big><u>cannot</u></big></font> finalize your registration in the tournament until we receive your check and payment <font color="red"><big><u>cannot</u></big></font> be done at the door.</p>
 		<p>To check on the status of your payment or to see who else has registered, please visit <a href="./view_registered.php">this page.</a></p>
 
@@ -496,7 +496,7 @@ if (isset($_POST['submit']))
 		$mailto = $email_address;
 
 		$email_body = "Thank you for registering for the Iowa Badminton Open 2014.\n";
-		$email_body .= "\nMarch ?, 2014\n\n";
+		$email_body .= "\nMarch 29-30, 2014\n\n";
 		$email_body .= "Name: " . $first_name . " " . $last_name . "\n";
 		$email_body .= "ISU Club Member: " . $club_member . "\n";
 		$email_body .= "Gender: " . $gender . "\n";
@@ -504,11 +504,21 @@ if (isset($_POST['submit']))
 		$email_body .= "Phone: " . $phone . "\n";
 		$email_body .= "Age: " . $age . "\n";
 		$email_body .= "Experience Level: " . $exp_level . "\n";
-		$email_body .= "Men's Singles: " . $men_single . "\n";
-		$email_body .= "Men's Doubles: " . $men_double . " (" . $men_double_name . ")\n";
-		$email_body .= "Women's Singles: " . $woman_single . "\n";
-		$email_body .= "Women's Doubles: " . $woman_double . " (" . $woman_double_name . ")\n";
-		$email_body .= "Mixed Doubles: " . $mixed_double . " (" . $mixed_double_name . ")\n";
+		if ($men_single) {
+			$email_body .= "Men's Singles\n";
+		}
+		if ($men_double) {
+			$email_body .= "Men's Doubles: (" . $men_double_name . ")\n";
+		}
+		if ($woman_single) {
+			$email_body .= "Women's Singles\n";
+		}
+		if ($woman_double) {
+			$email_body .= "Women's Doubles: (" . $woman_double_name . ")\n";
+		}
+		if ($mixed_double) {
+			$email_body .= "Mixed Doubles: (" . $mixed_double_name . ")\n\n";
+		}
 
 		$email_body .= "Please do not reply to this email as we will not be checking this address.\n";
 		$email_body .= "If this information is not correct or you need to change anything that has already been submitted, please contact the badminton club President.\n";
