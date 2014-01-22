@@ -503,19 +503,19 @@ if (isset($_POST['submit']))
 		$email_body .= "Phone: " . $phone . "\n";
 		$email_body .= "Age: " . $age . "\n";
 		$email_body .= "Experience Level: " . $exp_level . "\n";
-		if ($men_single) {
+		if ($men_single == "true") {
 			$email_body .= "Men's Singles\n";
 		}
-		if ($men_double) {
+		if ($men_double == "true") {
 			$email_body .= "Men's Doubles: (" . $men_double_name . ")\n";
 		}
-		if ($woman_single) {
+		if ($woman_single == "true") {
 			$email_body .= "Women's Singles\n";
 		}
-		if ($woman_double) {
+		if ($woman_double == "true") {
 			$email_body .= "Women's Doubles: (" . $woman_double_name . ")\n";
 		}
-		if ($mixed_double) {
+		if ($mixed_double == "true") {
 			$email_body .= "Mixed Doubles: (" . $mixed_double_name . ")\n\n";
 		}
 
