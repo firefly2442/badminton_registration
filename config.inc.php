@@ -11,11 +11,11 @@ $password = "shuttl3";
 
 
 //registration deadline
-$deadline = '2014-03-13 12:00';
+$deadline = '2014-03-15 12:00';
 
 
 //tournament details and heading
-$tournament_details = "<h1>Iowa Badminton Open 2014</h1><h1>March?, 2014</h1>";
+$tournament_details = "<h1>Iowa Badminton Open 2014</h1><h1>March 29-30, 2014</h1>";
 
 //send confirmation email on registration via this email address
 $email_sender = "isubadminton@rivetcode.com";
