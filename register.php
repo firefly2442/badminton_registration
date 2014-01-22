@@ -385,8 +385,7 @@ if (isset($_POST['submit']))
 		{
 			echo "<p><b>Since you are an ISU Badminton Club member, you can either mail your check to the address below or
 					you can give the check or cash to Bin Dong (Treasurer of the Badminton Club) during practice.  <u>Make sure this is turned in by
-					March ?, 2014.</u>  In addition, if you haven't submitted the <a href='http://www.recservices.iastate.edu/clubs/waivers/docs/Badminton.pdf'>waiver
-					and medical form</a> please also include this when you pay.</b></p><br>";
+					March 21, 2014.</u>  In addition, make sure the waiver is on file via the <a href='https://sodb-stuorg.sws.iastate.edu/'>Student Organizations website</a>.</b></p><br>";
 		}
 		else
 		{
