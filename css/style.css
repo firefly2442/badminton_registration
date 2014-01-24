@@ -60,6 +60,10 @@ table {
 	text-align: right;
 }
 
+.mainli {
+	margin: 0 0 5px 0;
+}
+
 #error {
 	color: red;
 	font-size: 150%;

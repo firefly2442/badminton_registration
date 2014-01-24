@@ -236,8 +236,8 @@ echo $tournament_details;
 <div id="error"><div id="events">You didn't specify any event(s).</div></div>
 <script>$("#events").hide();</script>
 <big><font color=red><b>*</b></font>Check the events you are registering in:</big>
-<br>For Non Member of ISU Badminton club: $25 for 1st event, $5 for each additional event.
-<br>For Member of ISU Badminton club: $15 for 1st event, $5 for each additional event.
+<br>For Non Member of ISU Badminton club: $30 for 1st event, $5 for each additional event.
+<br>For Member of ISU Badminton club: $20 for 1st event, $5 for each additional event.
 <br>
 <div id="error"><div id="female_gender">You specified your gender as Female but you tried signing up for Men's Singles/Doubles.</div></div>
 <script>$("#female_gender").hide();</script>
@@ -399,9 +399,9 @@ if (isset($_POST['submit']))
 		<?php
 
 		if ($club_member == "on")
-			$money = 15;
+			$money = 20;
 		else
-			$money = 25;
+			$money = 30;
 		$events--;
 		$money = $money + ($events * 5);
 		echo $money;
