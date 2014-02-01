@@ -256,7 +256,7 @@ echo $tournament_details;
 <script>$("#events").hide();</script>
 <big><font color=red><b>*</b></font>Check the events you are registering in:</big>
 <br>For Non Member of ISU Badminton club: $30 for 1st event, $5 for each additional event.
-<br>For Member of ISU Badminton club: $20 for 1st event, $5 for each additional event.
+<br>For Member of ISU Badminton club: $25 for 1st event, $5 for each additional event.
 <br>
 <div id="error"><div id="female_gender">You specified your gender as Female but you tried signing up for Men's Singles/Doubles.</div></div>
 <script>$("#female_gender").hide();</script>
@@ -397,8 +397,8 @@ if (isset($_POST['submit']))
 		//show special message for those under 18
 		if ($age < 18)
 		{
-			echo "<p><b><u><big><font color='red'>Since you are under 18 years of age, please also submit a hardcopy of the <a href='http://www.stuorg.iastate.edu/badminton/forms/Iowa_Badminton_Open_2012.pdf'>registration
-					form</a> when you send the check in and make sure to get your parent/guardian signature.</font></big></u></b></p><br>";
+			echo "<p><b><u><big><font color='red'>Since you are under 18 years of age, please also submit a hardcopy of the <a href='http://www.stuorg.iastate.edu/badminton/tournaments.php'>waiver
+					and medical form</a> when you send the check in and make sure to get your parent/guardian signature.</font></big></u></b></p><br>";
 		}
 		if ($club_member == "on")
 		{
@@ -408,8 +408,8 @@ if (isset($_POST['submit']))
 		}
 		else
 		{
-			echo "<p><b>Since you are not an ISU Badminton Club member, please also fill out the <a href='http://www.stuorg.iastate.edu/badminton/forms/Iowa_Badminton_Open_2012.pdf'>waiver
-				and medical form</a> when you send in your check.</b></p><br>";
+			echo "<p><b>Since you are not an ISU Badminton Club member, please also fill out the <a href='http://www.stuorg.iastate.edu/badminton/tournaments.php'>waiver
+				and medical form</a> and submit it when you send in your check.</b></p><br>";
 		}
 
 
@@ -418,7 +418,7 @@ if (isset($_POST['submit']))
 		<?php
 
 		if ($club_member == "on")
-			$money = 20;
+			$money = 25;
 		else
 			$money = 30;
 		$events--;
