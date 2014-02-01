@@ -134,9 +134,13 @@ if (isset($_POST['submit']))
 		$waiver = filter($_POST['waiver']);
 	} else { $waiver = ""; }
 
-
+	if (isset($_POST['tshirtsize'])) {
+		$tshirtsize = filter($_POST['tshirtsize']);
+	} else { $tshirtsize = ""; }
 	
-
+	if (isset($_POST['tshirtcolor'])) {
+		$tshirtcolor = filter($_POST['tshirtcolor']);
+	} else { $tshirtcolor = ""; }
 }
 
 
@@ -181,6 +185,21 @@ echo $tournament_details;
 <input type="checkbox" name="club_member" <?php if (isset($club_member) && $club_member == "on") { echo " checked"; }?>>Yes
 <br>
 <br>
+
+<big><font color=red><b>*</b></font>T-Shirt Size and Color:</big>
+<select name="tshirtsize">
+<option value="Small">Small</option>
+<option value="Medium">Medium</option>
+<option value="Large">Large</option>
+<option value="Extra Large">Extra Large</option>
+</select>
+<select name="tshirtcolor">
+<option value="Red">Red</option>
+<option value="Blue">Blue</option>
+</select>
+<br>
+<br>
+
 
 <div id="error"><div id="gender">You didn't specify a gender.</div></div>
 <script>$("#gender").hide();</script>
@@ -466,6 +485,8 @@ if (isset($_POST['submit']))
 		$query = "INSERT INTO tournament VALUES ('','".$first_name."',
 												'".$last_name."',
 												".$club_member.",
+												'".$tshirtsize."',
+												'".$tshirtcolor."',
 												'".$gender."',
 												'".$address."',
 												'".$city."',
@@ -498,6 +519,7 @@ if (isset($_POST['submit']))
 		$email_body .= "\nMarch 29-30, 2014\n\n";
 		$email_body .= "Name: " . $first_name . " " . $last_name . "\n";
 		$email_body .= "ISU Club Member: " . $club_member . "\n";
+		$email_body .= "T-Shirt Size and Color: " . $tshirtsize . " - " . $tshirtcolor . "\n";
 		$email_body .= "Gender: " . $gender . "\n";
 		$email_body .= "Address: " . $address . " - " . $city . " " . $state . ", " . $zip . "\n";
 		$email_body .= "Phone: " . $phone . "\n";

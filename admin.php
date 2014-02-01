@@ -203,7 +203,7 @@ $(document).ready(function(){
 
 <table>
 <tr>
-<th>Name</th><th>Club<br>Member</th><th>Gender</th><th>Address/Phone</th><th>Age</th><th>Exp.<br>Level</th><th>Men's<br>Singles</th>
+<th>Name</th><th>Club<br>Member</th><th>T-Shirt Size<br>and Color</th><th>Gender</th><th>Address/Phone</th><th>Age</th><th>Exp.<br>Level</th><th>Men's<br>Singles</th>
 <th>Men's Doubles</th><th>Woman's<br>Singles</th><th>Woman's Doubles</th>
 <th>Mixed Doubles</th><th>Email (Contact Future)</th><th>Payment<br>Received</th><th>Register Date</th>
 </tr>
@@ -221,7 +221,8 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
 	echo "'>\n";
 		echo "<td class='center'>".$row['first_name']." ".$row['last_name']."</td>";
 		echo "<td class='center'>";
-			echo (($row['club_member'] == true) ? "Yes" : "No");
+			echo (($row['club_member'] == true) ? "Yes" : "No") . "</td>";
+		echo "<td class='center'>".$row['tshirtsize']."(".$row['tshirtcolor'].")</td>";
 		echo "<td class='center'>".$row['gender']."</td>";
 		echo "<td class='center'>".$row['address']."<br>".$row['city'].", ".$row['state']." ".$row['zip']."<br>".$row['phone']."</td>";
 		echo "<td class='center'>".$row['age']."</td>";

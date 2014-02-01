@@ -24,6 +24,8 @@ CREATE TABLE IF NOT EXISTS `tournament` (
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `club_member` tinyint(1) NOT NULL,
+  `tshirtsize` varchar(255) NOT NULL,
+  `tshirtcolor` varchar(255) NOT NULL,
   `gender` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
