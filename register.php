@@ -186,16 +186,17 @@ echo $tournament_details;
 <br>
 <br>
 
-<big><font color=red><b>*</b></font>T-Shirt Size and Color:</big>
+<big><font color=red><b>*</b></font>T-Shirt Size and Color (XXL size is +$2):</big>
 <select name="tshirtsize">
 <option value="Small">Small</option>
 <option value="Medium">Medium</option>
 <option value="Large">Large</option>
-<option value="Extra Large">Extra Large</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
 </select>
 <select name="tshirtcolor">
-<option value="Red">Red</option>
-<option value="Blue">Blue</option>
+<option value="Black">Black</option>
+<option value="Pink">Pink</option>
 </select>
 <br>
 <br>
@@ -423,14 +424,16 @@ if (isset($_POST['submit']))
 			$money = 30;
 		$events--;
 		$money = $money + ($events * 5);
+		if ($tshirtsize == "XXL")
+			$money = $money + 2;
 		echo $money;
 		?>
 		</b> dollars via check made payable to: "ISU Badminton Club" to the following address:</p>
-		<p>ISU Badminton Club c/o: Tournament</p>
-		<p>Iowa State Memorial Union Mailbox 156</p>
-		<p>West Student Office Space</p>
-		<p>2229 Lincoln Way</p>
-		<p>Ames, Iowa 50011</p>
+		<p>ISU Badminton Club c/o: Tournament<br>
+		Iowa State Memorial Union Mailbox 156<br>
+		West Student Office Space<br>
+		2229 Lincoln Way<br>
+		Ames, Iowa 50011</p>
 		<br>
 		<p><big><u><b>Mail must be received by March 21, 2014</b></u></big></p>
 		<p>Please note, we <font color="red"><big><u>cannot</u></big></font> finalize your registration in the tournament until we receive your check and payment <font color="red"><big><u>cannot</u></big></font> be done at the door.</p>
@@ -546,8 +549,8 @@ if (isset($_POST['submit']))
 		$email_body .= "http://www.stuorg.iastate.edu/badminton/contact.php\n";
 		$email_body .= "Please tell your friends to register!\n";
 		$email_body .= "View who else has registered as well as check to see if we've received your payment here:\n";
-		$email_body .= "http://badminton.rivetcode.com\n";
-		$email_body .= "\nMailing Address:\n";
+		$email_body .= "http://badminton.rivetcode.com\n\n";
+		$email_body .= "Please send $".$money." to the address below.\n\n";
 		$email_body .= "ISU Badminton Club c/o: Tournament\n";
 		$email_body .= "Iowa State Memorial Union Mailbox 156\n";
 		$email_body .= "West Student Office Space\n";
