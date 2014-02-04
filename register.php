@@ -141,6 +141,10 @@ if (isset($_POST['submit']))
 	if (isset($_POST['tshirtcolor'])) {
 		$tshirtcolor = filter($_POST['tshirtcolor']);
 	} else { $tshirtcolor = ""; }
+	
+	if (isset($_POST['tshirtquantity'])) {
+		$tshirtquantity = filter($_POST['tshirtquantity']);
+	} else { $tshirtquantity = ""; }
 }
 
 
@@ -186,17 +190,21 @@ echo $tournament_details;
 <br>
 <br>
 
-<big><font color=red><b>*</b></font>T-Shirt Size and Color (XXL size is +$2):</big>
+<big><font color=red><b>*</b></font>T-Shirt Size, Quantity, and Color (XXL size is +$2 each, additional t-shirt +$10):</big>
 <select name="tshirtsize">
-<option value="Small">Small</option>
-<option value="Medium">Medium</option>
-<option value="Large">Large</option>
-<option value="XL">XL</option>
-<option value="XXL">XXL</option>
+<option value="Small" <?php if (isset($tshirtsize) && $tshirtsize == "Small") { echo " selected='selected'"; }?>>Small</option>
+<option value="Medium" <?php if (isset($tshirtsize) && $tshirtsize == "Medium") { echo " selected='selected'"; }?>>Medium</option>
+<option value="Large" <?php if (isset($tshirtsize) && $tshirtsize == "Large") { echo " selected='selected'"; }?>>Large</option>
+<option value="XL" <?php if (isset($tshirtsize) && $tshirtsize == "XL") { echo " selected='selected'"; }?>>XL</option>
+<option value="XXL" <?php if (isset($tshirtsize) && $tshirtsize == "XXL") { echo " selected='selected'"; }?>>XXL</option>
+</select>
+<select name="tshirtquantity">
+<option value="1" <?php if (isset($tshirtquantity) && $tshirtquantity == "1") { echo " selected='selected'"; }?>>1</option>
+<option value="2" <?php if (isset($tshirtquantity) && $tshirtquantity == "2") { echo " selected='selected'"; }?>>2</option>
 </select>
 <select name="tshirtcolor">
-<option value="Black">Black</option>
-<option value="Pink">Pink</option>
+<option value="Black" <?php if (isset($tshirtcolor) && $tshirtcolor == "Black") { echo " selected='selected'"; }?>>Black</option>
+<option value="Pink" <?php if (isset($tshirtcolor) && $tshirtcolor == "Pink") { echo " selected='selected'"; }?>>Pink</option>
 </select>
 <br>
 <br>
@@ -425,7 +433,9 @@ if (isset($_POST['submit']))
 		$events--;
 		$money = $money + ($events * 5);
 		if ($tshirtsize == "XXL")
-			$money = $money + 2;
+			$money = $money + (2 * intval($tshirtquantity));
+		if ($tshirtquantity == "2")
+			$money = $money + 10;
 		echo $money;
 		?>
 		</b> dollars via check made payable to: "ISU Badminton Club" to the following address:</p>
@@ -488,7 +498,7 @@ if (isset($_POST['submit']))
 		$query = "INSERT INTO tournament VALUES ('','".$first_name."',
 												'".$last_name."',
 												".$club_member.",
-												'".$tshirtsize."',
+												'".$tshirtquantity."x ".$tshirtsize."',
 												'".$tshirtcolor."',
 												'".$gender."',
 												'".$address."',
@@ -522,7 +532,7 @@ if (isset($_POST['submit']))
 		$email_body .= "\nMarch 29-30, 2014\n\n";
 		$email_body .= "Name: " . $first_name . " " . $last_name . "\n";
 		$email_body .= "ISU Club Member: " . $club_member . "\n";
-		$email_body .= "T-Shirt Size and Color: " . $tshirtsize . " - " . $tshirtcolor . "\n";
+		$email_body .= "T-Shirt Quantity, Size, and Color: " . $tshirtquantity . "x " . $tshirtsize . " - " . $tshirtcolor . "\n";
 		$email_body .= "Gender: " . $gender . "\n";
 		$email_body .= "Address: " . $address . " - " . $city . " " . $state . ", " . $zip . "\n";
 		$email_body .= "Phone: " . $phone . "\n";
