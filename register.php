@@ -195,7 +195,7 @@ echo $tournament_details;
 <br>
 
 <big><font color=red><b>*</b></font>T-Shirt Size and Color:</big><br>
-First T-Shirt (FREE!, included with registration, XXL size is +$2)
+First T-Shirt (FREE!, XXL size is +$2)
 <select name="tshirtonesize">
 <option value="Small" <?php if (isset($tshirtonesize) && $tshirtonesize == "Small") { echo " selected='selected'"; }?>>Small</option>
 <option value="Medium" <?php if (isset($tshirtonesize) && $tshirtonesize == "Medium") { echo " selected='selected'"; }?>>Medium</option>
