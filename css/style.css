@@ -72,13 +72,3 @@ table {
 #breadcrumb {
 	font-size: 150%;
 }
-
-.prizes {
-	width: auto;
-	border-collapse: collapse;
-	border: 1px solid black;
-}
-.prizes td {
-	padding: 3px;
-	border: 1px solid black;
-}
